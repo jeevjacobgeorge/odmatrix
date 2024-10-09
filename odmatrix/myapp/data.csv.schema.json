@@ -1,0 +1,192 @@
+{
+  "fields": [
+    {
+      "name": "etd_final_depot_name",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_waybill_no",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_etm_no",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_cond_no",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_drvr_no",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_bus_no",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_trip_no",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_route_no",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_ticket_no",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_adult",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_child",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_lugg",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_other",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_ticket_time",
+      "type": "time",
+      "format": "%H:%M"
+    },
+    {
+      "name": "etd_ticket_date",
+      "type": "date",
+      "format": "default"
+    },
+    {
+      "name": "etd_amount",
+      "type": "number",
+      "format": "default"
+    },
+    {
+      "name": "etd_doc_no",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_last_upd_date",
+      "type": "date",
+      "format": "default"
+    },
+    {
+      "name": "etd_rfid_slno",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_rfid_cardno",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_rfid_bal_amt",
+      "type": "number",
+      "format": "default"
+    },
+    {
+      "name": "etd_gender",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_age",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_cash_or_card",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_schd_no",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_schd_name",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_bus_type_name",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_route_name",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_route_no_ucode",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_from_stage_name",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_to_stage_name",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_from_stage_ucode",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_to_stage_ucode",
+      "type": "integer",
+      "format": "default"
+    },
+    {
+      "name": "etd_kms",
+      "type": "number",
+      "format": "default"
+    },
+    {
+      "name": "etd_trip_direction",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_ticket_name",
+      "type": "string",
+      "format": "default"
+    },
+    {
+      "name": "etd_route_kms",
+      "type": "integer",
+      "format": "default"
+    }
+  ],
+  "missingValues": [
+    ""
+  ]
+}
