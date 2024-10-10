@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OD Matrix - Interactive Table</title>
+    
+    <!-- Bootstrap CSS for basic styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- DataTables CSS for table features -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .dataTables_wrapper .dataTables_filter {
+            display: none; /* Hide default search bar */
+        }
+        .table {
+            margin-top: 20px;
+        }
+        .search-container {
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        .search-input {
+            width: 150px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Origin-Destination Matrix</h1>
+        
+        <!-- Custom Search Fields -->
+        <div class="search-container">
+            <label for="fromStageSearch">From Stage:</label>
+            <input type="text" id="fromStageSearch" class="search-input form-control" placeholder="Search From Stage">
+            
+            <label for="toStageSearch">To Stage:</label>
+            <input type="text" id="toStageSearch" class="search-input form-control" placeholder="Search To Stage">
+        </div>
+
+        <div class="table-responsive">
+            <table id="odMatrixTable" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>From Stage</th>
+                        <th>To Stage</th>
+                        <th>Passenger Count</th>
+                    </tr>
+                </thead>
+                <tbody id="odMatrixBody">
+                    <!-- The data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Bootstrap JS (Optional for styling, not mandatory) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script type="text/javascript">
+        // Load the OD Matrix data
+        document.addEventListener("DOMContentLoaded", function () {
+            const odMatrixData = JSON.parse('{{ od_matrix_json|safe }}');
+            let tableBody = document.getElementById('odMatrixBody');
+            
+            // Dynamically add rows to the table
+            odMatrixData.forEach(row => {
+                let tr = `<tr>
+                    <td>${row.etd_from_stage_name}</td>
+                    <td>${row.etd_to_stage_name}</td>
+                    <td>${row['0']}</td>
+                </tr>`;
+                tableBody.innerHTML += tr;
+            });
+
+            // Initialize DataTables
+            let table = $('#odMatrixTable').DataTable({
+                paging: true,
+                searching: true,
+                ordering: true,
+                responsive: true,
+                pageLength: 10
+            });
+
+            // Custom Search for 'From Stage'
+            $('#fromStageSearch').on('keyup', function () {
+                table.column(0).search(this.value).draw();
+            });
+
+            // Custom Search for 'To Stage'
+            $('#toStageSearch').on('keyup', function () {
+                table.column(1).search(this.value).draw();
+            });
+        });
+    </script>
+</body>
+</html>
